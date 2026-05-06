@@ -1,0 +1,44 @@
+---
+title: "Marketing Projects"
+description: "Marketing projects, case studies, and applied business work."
+---
+
+## Marketing Projects
+
+This section will hold Arturo's applied marketing projects, including class assignments, independent work, campaign ideas, customer research, and business case studies.
+
+The goal is to show how Arturo thinks through marketing problems: identifying the audience, understanding the customer need, defining a message, recommending channels, and connecting the work to measurable outcomes.
+
+## Project Slots
+
+::: {.content-grid}
+::: {.content-card}
+### Customer Profile or Persona
+
+Add a project that defines a target customer, their goals, pain points, buying motivations, and decision process.
+:::
+
+::: {.content-card}
+### Campaign Concept
+
+Add a campaign idea with objective, audience, message, channels, and success metrics.
+:::
+
+::: {.content-card}
+### Product or Service Positioning
+
+Add a positioning analysis that explains how a product or service should be presented to a specific audience.
+:::
+
+::: {.content-card}
+### Competitive Analysis
+
+Add research comparing brands, products, competitors, pricing, customer experience, or communication strategy.
+:::
+
+::: {.content-card}
+### Retail Sales & Marketing Reflection
+
+Add a reflection connecting Best Buy experience to marketing concepts such as customer journey, value proposition, product education, and relationship building.
+:::
+:::

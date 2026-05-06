@@ -1,0 +1,42 @@
+---
+title: "Google Analytics"
+description: "Google Analytics learning, practice, and portfolio examples."
+---
+
+## Google Analytics
+
+This section is reserved for Arturo's **Google Analytics** work, including practice exercises, certifications, screenshots, reports, and reflections.
+
+Google Analytics is a useful bridge between Arturo's sales/customer-service background and his marketing education. It can show how customer behavior, website activity, and campaign performance connect to business decisions.
+
+## Portfolio Slots
+
+::: {.content-grid}
+::: {.content-card}
+### GA4 Learning Notes
+
+Add notes about GA4 concepts such as events, conversions, traffic acquisition, engagement, users, sessions, and reporting.
+:::
+
+::: {.content-card}
+### Sample Reports
+
+Add screenshots or summaries of reports showing how to interpret customer behavior, traffic sources, or campaign performance.
+:::
+
+::: {.content-card}
+### Business Insights
+
+Add short writeups that answer questions such as:
+
+- **What happened?**
+- **Why might it have happened?**
+- **What should a business do next?**
+:::
+
+::: {.content-card}
+### Certification
+
+Add any Google Analytics or digital marketing certificates here once complete.
+:::
+:::

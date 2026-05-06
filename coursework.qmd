@@ -1,0 +1,46 @@
+---
+title: "Coursework"
+description: "Relevant coursework and academic work."
+---
+
+## Coursework
+
+This section will document Arturo's academic work in **International Business & Marketing** at California State Polytechnic University, Pomona, along with prior business coursework from Mt. San Antonio College.
+
+The goal of this page is to connect classroom learning to professional strengths: customer insight, communication, marketing strategy, sales, analytics, and project coordination.
+
+## Current Academic Focus
+
+- **International Business & Marketing** - market awareness, business communication, strategy, and customer value
+- **Business Administration foundation** - management, operations, communication, and organizational problem solving
+- **Social and Behavioral Sciences foundation** - understanding people, behavior, decision-making, and community context
+
+## Coursework Portfolio Slots
+
+Use these sections to add assignments, reflections, or project summaries later:
+
+::: {.content-grid}
+::: {.content-card}
+### Marketing Strategy
+
+Add projects related to target markets, positioning, competitive analysis, brand strategy, or customer segmentation.
+:::
+
+::: {.content-card}
+### Business Communication
+
+Add presentations, written reports, client-style recommendations, or examples of professional communication.
+:::
+
+::: {.content-card}
+### International Business
+
+Add work related to global markets, cultural considerations, international trade, or business expansion.
+:::
+
+::: {.content-card}
+### Operations & Project Work
+
+Add coursework involving planning, process improvement, coordination, stakeholder communication, or timelines.
+:::
+:::

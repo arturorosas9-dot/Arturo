@@ -5,11 +5,17 @@ description: "Customer service experience and strengths."
 
 ## Customer Service
 
-Arturo brings hands-on experience helping customers identify their needs, compare options, and move forward with confidence. His customer-service approach is grounded in active listening, clear communication, and practical problem solving.
+Arturo brings hands-on experience helping customers identify their needs, compare options, and move forward with confidence. His customer-service approach is grounded in **active listening, clear communication, practical problem solving, and follow-through**.
+
+In a retail environment where customers often make expensive and long-term purchase decisions, Arturo focuses on creating trust. He asks questions, explains tradeoffs, and helps customers understand which products fit their home, budget, timeline, and expectations.
 
 ## Strengths
 
-- Assessing customer goals and constraints
-- Resolving complex customer concerns
-- Communicating clearly in English and Spanish
-- Building trust through product knowledge and follow-through
+- **Assessing customer goals and constraints** before recommending products or next steps
+- **Resolving complex customer concerns** with patience and professionalism
+- **Communicating clearly in English and Spanish** to support a wider range of customers
+- **Building trust through product knowledge and follow-through** so customers feel supported after the conversation
+
+## Portfolio Space
+
+Future examples can include customer-service scenarios, service recovery stories, bilingual communication examples, and customer satisfaction improvements.
