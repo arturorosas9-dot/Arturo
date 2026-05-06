@@ -5,11 +5,17 @@ description: "Sales strategy and product knowledge."
 
 ## Sales
 
-As an Appliance Category Advisor, Arturo supports customers through high-consideration purchases by explaining product value, comparing options, and recommending solutions that fit each customer's needs.
+As an Appliance Category Advisor, Arturo supports customers through high-consideration purchases by explaining product value, comparing options, and recommending solutions that fit each customer's needs. His sales approach is consultative: the goal is not just to sell a product, but to help the customer understand why a product is the right fit.
+
+This experience connects directly to his business and marketing education. Arturo understands that strong sales work depends on **customer insight, product positioning, communication, and trust**.
 
 ## Strengths
 
-- Sales strategy and product knowledge
-- Tailored product recommendations
-- Customer confidence building
-- CRM-supported follow-up and organization
+- **Sales strategy and product knowledge** for appliance categories and customer needs
+- **Tailored product recommendations** based on budget, use case, and project expectations
+- **Customer confidence building** through clear explanation and practical comparisons
+- **CRM-supported follow-up and organization** to keep customer conversations moving
+
+## Portfolio Space
+
+Future examples can include product recommendation frameworks, sales process notes, customer journey mapping, and examples from marketing coursework.

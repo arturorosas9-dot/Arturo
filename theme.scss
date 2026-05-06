@@ -242,6 +242,24 @@ p {
   margin-top: 0.35rem;
 }
 
+.content-card {
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid $rule;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.content-card h3 {
+  margin-top: 0;
+}
+
+.content-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.4rem 0;
+}
+
 .page-footer,
 .quarto-title-block {
   display: none;
@@ -263,7 +281,8 @@ p {
   }
 
   .two-column,
-  .work-grid {
+  .work-grid,
+  .content-grid {
     gap: 24px;
     grid-template-columns: 1fr;
   }

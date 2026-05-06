@@ -25,6 +25,12 @@ website:
         href: project-coordination.qmd
       - text: "Resume"
         href: resume.qmd
+      - text: "Marketing Projects"
+        href: marketing-projects.qmd
+      - text: "Google Analytics"
+        href: google-analytics.qmd
+      - text: "Coursework"
+        href: coursework.qmd
   page-footer:
     left: ""
     right: ""
