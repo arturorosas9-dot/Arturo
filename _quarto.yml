@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "listings/*.qmd"
+  resources:
+    - "resume/Resume.Rmd"
+
+website:
+  title: "Arturo Rosas"
+  site-url: "https://example.com"
+  description: "Customer service, sales, and project coordination portfolio for Arturo Rosas."
+  search: true
+  navbar:
+    pinned: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Customer Service"
+        href: customer-service.qmd
+      - text: "Sales"
+        href: sales.qmd
+      - text: "Project Coordination"
+        href: project-coordination.qmd
+      - text: "Resume"
+        href: resume.qmd
+  page-footer:
+    left: ""
+    right: ""
+
+format:
+  html:
+    theme: [flatly, theme.scss]
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    grid:
+      sidebar-width: 0px
+      body-width: 760px
+      margin-width: 0px
+
+execute:
+  freeze: auto

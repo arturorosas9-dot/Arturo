@@ -1,0 +1,108 @@
+---
+title: "Arturo Rosas"
+description: "Portfolio home page."
+page-layout: article
+---
+
+::: {.portfolio-home}
+::: {.intro}
+::: {.intro__photo}
+![](images/headshot.jpeg){fig-alt="Portrait of Arturo Rosas"}
+:::
+
+::: {.intro__copy}
+# Arturo Rosas
+
+**Customer service professional. Sales advisor. Project coordinator.**
+
+I help customers make confident decisions by listening closely, identifying needs, and delivering tailored solutions. My experience spans appliance sales, client communication, product education, team training, and project coordination.
+
+[View Resume](resume.qmd){.btn .btn-primary}
+[Work With Me](services.qmd){.btn .btn-outline-secondary}
+:::
+:::
+
+---
+
+## What I Do
+
+::: {.two-column}
+::: {.column-block}
+### For Customers & Clients
+
+- **Needs assessment** - understanding customer goals, constraints, and priorities
+- **Tailored recommendations** - matching clients with high-value products and practical solutions
+- **Clear communication** - explaining options, timelines, and next steps with confidence
+- **Issue resolution** - handling complex concerns with patience and professionalism
+
+[View Services ->](services.qmd){.text-link}
+:::
+
+::: {.column-block}
+### For Teams & Projects
+
+- Project coordination across customers, contractors, and internal teams
+- Product knowledge that supports stronger sales conversations
+- Training and mentoring that helps team members improve performance
+- CRM, Microsoft Office, and documentation habits that keep work organized
+
+[View Experience ->](resume.qmd){.text-link}
+:::
+:::
+
+---
+
+## About
+
+I'm a results-driven professional with experience in customer service, sales, and project coordination. I have a strong track record of assessing client needs, delivering tailored solutions, and working with cross-functional teams to support successful outcomes.
+
+At Best Buy, I serve as an Appliance Category Advisor, where I help customers evaluate products, coordinate expectations with contractors and clients, resolve complex concerns, and train team members. I am bilingual in Spanish and bring strong communication, problem-solving, and relationship-building skills to customer-facing work.
+
+I am currently pursuing a Bachelor of Science in International Business & Marketing at California State Polytechnic University, Pomona, with expected graduation in 2027.
+
+---
+
+## Selected Work
+
+::: {.work-grid}
+::: {.work-item}
+### Appliance Sales Advising
+
+Delivered tailored appliance recommendations by assessing customer needs, explaining product value, and supporting confident purchase decisions.
+
+[View experience ->](listings/appliance-sales-advising.qmd){.text-link}
+:::
+
+::: {.work-item}
+### Client & Contractor Coordination
+
+Collaborated with contractors and clients to keep project plans aligned with expectations, timelines, and customer priorities.
+
+[View coordination ->](listings/client-contractor-coordination.qmd){.text-link}
+:::
+
+::: {.work-item}
+### Team Training
+
+Trained and mentored team members by sharing product knowledge, sales practices, and customer-service approaches.
+
+[View skills ->](listings/team-training.qmd){.text-link}
+:::
+:::
+
+---
+
+## Recognition
+
+- **Current role** - Appliance Category Advisor at Best Buy in West Covina, CA
+- **Education** - B.S. in International Business & Marketing, expected 2027
+- **Bilingual communication** - Fluent in Spanish and experienced in customer-facing support
+
+---
+
+## Let's Connect
+
+Whether you're looking for a customer service professional, sales advisor, or project coordination candidate, I'd be glad to connect.
+
+[arturorosas9@gmail.com](mailto:arturorosas9@gmail.com) | [(909) 635-9143](tel:+19096359143) | [LinkedIn](https://linkedin.com/in/auro-ros-003a7286)
+:::

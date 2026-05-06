@@ -1,0 +1,293 @@
+/*-------------------------------------------------
+  Arturo Rosas Portfolio Theme
+  Adapted from the CCIDM Quarto portfolio template.
+--------------------------------------------------*/
+
+/*-- scss:defaults --*/
+
+$color-primary: #1f3a5f;
+$color-secondary: #486581;
+$accent-1: #8a6f3d;
+$accent-2: #2f6f9f;
+$nav-bg: #172436;
+$page-bg: #f4f6f3;
+$rule: #d7ddd6;
+$muted: #66737f;
+$neutral-0: #ffffff;
+$neutral-9: #202a33;
+
+$font-primary: Arial, Helvetica, sans-serif;
+$font-body: $font-primary;
+
+/*-- scss:rules --*/
+
+html,
+body {
+  background: $page-bg;
+}
+
+body {
+  color: $neutral-9;
+  font-family: $font-body;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+a {
+  color: $accent-2;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+
+.navbar {
+  background: $nav-bg;
+  border: 0;
+  min-height: 58px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  color: #dbe3ea;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-right: 1.2rem;
+}
+
+.navbar .nav-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding-left: 0.65rem;
+  padding-right: 0.65rem;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: $neutral-0;
+}
+
+#quarto-content {
+  background: $page-bg;
+}
+
+main.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 26px 20px 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h1 {
+  color: $color-primary;
+}
+
+h2 {
+  color: $accent-1;
+}
+
+h3 {
+  color: $color-secondary;
+}
+
+p {
+  color: $neutral-9;
+  line-height: 1.5;
+}
+
+.highlight {
+  background-color: $accent-2;
+  color: $neutral-0;
+  padding: 0.15em 0.35em;
+  border-radius: 0.2em;
+}
+
+.portfolio-home h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.portfolio-home h2 {
+  font-size: 1.65rem;
+  margin: 0 0 1.5rem;
+}
+
+.portfolio-home h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-home ul {
+  padding-left: 1.25rem;
+}
+
+.portfolio-home li {
+  margin-bottom: 0.2rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin: 0 auto 30px;
+  max-width: 720px;
+}
+
+.intro__photo {
+  padding-top: 46px;
+}
+
+.intro__photo img {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  width: 210px;
+  box-shadow: 0 8px 24px rgba(23, 36, 54, 0.18);
+}
+
+.intro__copy {
+  padding-top: 22px;
+}
+
+.intro__copy p:first-of-type {
+  font-weight: 700;
+}
+
+.btn {
+  border-radius: 4px;
+  font-size: 0.93rem;
+  font-weight: 700;
+  margin-right: 0.8rem;
+  margin-top: 2rem;
+  padding: 0.45rem 0.85rem;
+}
+
+.btn-primary {
+  background: $nav-bg;
+  border-color: $nav-bg;
+}
+
+.btn-primary:hover {
+  background: #223653;
+  border-color: #223653;
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  border-color: #a9b3bb;
+  color: $muted;
+}
+
+.btn-outline-secondary:hover {
+  background: #e8ecef;
+  border-color: #8795a1;
+  color: $neutral-9;
+}
+
+.portfolio-home hr {
+  border: 0;
+  border-top: 2px solid $rule;
+  margin: 30px 0;
+  opacity: 1;
+}
+
+.two-column {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.column-block,
+.work-item {
+  min-width: 0;
+}
+
+.work-grid {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-item h3 {
+  color: $neutral-9;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text-link {
+  color: $accent-2;
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+.page-footer,
+.quarto-title-block {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  main.content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .intro {
+    gap: 24px;
+    grid-template-columns: 150px 1fr;
+  }
+
+  .intro__photo img {
+    width: 150px;
+  }
+
+  .two-column,
+  .work-grid {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .intro {
+    display: block;
+  }
+
+  .intro__photo {
+    padding-top: 16px;
+  }
+
+  .intro__photo img {
+    margin-bottom: 20px;
+    width: 150px;
+  }
+
+  .intro__copy {
+    padding-top: 0;
+  }
+
+  .btn {
+    margin-top: 0.6rem;
+  }
+}

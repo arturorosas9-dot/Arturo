@@ -1,0 +1,45 @@
+---
+title: "Resume"
+description: "Resume and professional background."
+---
+
+## Arturo Rosas
+
+[arturorosas9@gmail.com](mailto:arturorosas9@gmail.com) | [(909) 635-9143](tel:+19096359143) | [linkedin.com/in/auro-ros-003a7286](https://linkedin.com/in/auro-ros-003a7286)
+
+The PDF résumé source lives at [`resume/Resume.Rmd`](resume/Resume.Rmd). PDF generation is ready once R is installed on this machine.
+
+## Summary
+
+Results-driven professional with experience in customer service, sales, and project coordination. Proven ability to assess client needs, deliver tailored solutions, and collaborate with cross-functional teams to ensure successful outcomes. Strong communication and problem-solving skills with a track record of training team members and improving customer satisfaction. Seeking opportunities in customer service or project management.
+
+## Education
+
+### California State Polytechnic University, Pomona
+
+Bachelor of Science, International Business & Marketing | Expected 2027
+
+### Mt. San Antonio College
+
+Associate Degrees, Business Administration & Social and Behavioral Sciences | 2023
+
+## Experience
+
+### Best Buy, West Covina, CA
+
+**Appliance Category Advisor | 2019 - Present**
+
+- Delivered tailored solutions to customers by assessing needs and recommending high-value appliance products
+- Collaborated with contractors and clients to ensure project plans aligned with expectations and timelines
+- Provided in-depth product knowledge to improve customer confidence and drive sales performance
+- Trained and mentored team members to improve overall team effectiveness
+- Resolved complex customer concerns to enhance satisfaction and retention
+
+## Skills & Activities
+
+- Bilingual: Fluent in Spanish
+- Microsoft Office Suite: Excel, Word, PowerPoint, Outlook
+- Customer Relationship Management: CRM
+- Sales Strategy & Product Knowledge
+- Team Training & Development
+- Project Coordination & Client Communication
