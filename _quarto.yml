@@ -31,6 +31,13 @@ website:
         href: google-analytics.qmd
       - text: "Coursework"
         href: coursework.qmd
+    right:
+      - icon: envelope
+        href: mailto:arturorosas9@gmail.com
+      - icon: linkedin
+        href: https://linkedin.com/in/auro-ros-003a7286
+      - icon: github
+        href: https://github.com/arturorosas9-dot
   page-footer:
     left: ""
     right: ""
