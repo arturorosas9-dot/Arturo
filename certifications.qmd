@@ -1,0 +1,46 @@
+---
+title: "Certifications"
+description: "My verified credentials and Google Analytics training."
+---
+
+## Google Analytics Certifications
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; margin-bottom: 4rem;"}
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center; background: #fff;"}
+![Get started using Google Analytics](assets/img/certs/Google Analytics.jpeg){style="max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem;"}
+
+### Get started using Google Analytics
+**Issuer:** Google  
+**Date of Completion:** February 15, 2026  
+**Certificate ID:** `57183 174479642`
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center; background: #fff;"}
+![Manage GA4 Data and Learn to Read Reports](assets/img/certs/Manage Ga4 Data and Read Reports.jpeg){style="max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem;"}
+
+### Manage GA4 Data and Learn to Read Reports
+**Issuer:** Google  
+**Date of Completion:** February 20, 2026  
+**Certificate ID:** `57183 174976146`
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center; background: #fff;"}
+![Dive Deeper into GA4 Data and Reports](assets/img/certs/Ga4 data and Reports.jpeg){style="max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem;"}
+
+### Dive Deeper into GA4 Data and Reports
+**Issuer:** Google  
+**Date of Completion:** February 27, 2026  
+**Certificate ID:** `57183 175740613`
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center; background: #fff;"}
+![Use GA4 with other Tools and Data Sources](assets/img/certs/Tools and Data sources.jpeg){style="max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem;"}
+
+### Use GA4 with other Tools and Data Sources
+**Issuer:** Google  
+**Date of Completion:** March 7, 2026  
+**Certificate ID:** `57183 176334035`
+:::
+
+:::

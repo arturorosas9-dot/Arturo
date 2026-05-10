@@ -1,0 +1,82 @@
+---
+title: "M08-Reflection Essay-Advanced Data Types"
+author: "Arturo Rosas"
+format:
+  html:
+    toc: true
+    toc-location: right
+---
+
+
+
+# Essay Prompts:
+
+## 1. In Step 1, Dr. Dave Robinson demonstrated how you can deal with various data types using string, forecast, and lubricate packages. Pick three functions he used and how it helped him achieve his wrangling goals.
+
+### Response:
+
+1.  Cumsum(is.na()) & first()
+
+    A.  this combination allowed him to turn invisible formatting gaps into hard, indexable data groups
+
+2.  str_remove()
+
+    A.  This allows cleaning trailing dots and artifacts using regex dollar signs.
+
+3.  fct_reorder(.fun = last)
+
+    A.  This helps align line charts legends to the right edge of the data
+
+## 2. Summarize the presentation by Dr. Pat Scholoss, a Professor at the University of Michigan, on how to deal with date data in Step 2. How much were you able to understand his presentation? compare his style with Dave Robinson's. What do you like or dislike?
+
+### Response:
+
+His presentation covered the anatomy of an automated graphic. He covers a handful of different key points to help wrangle data and utilize new functions to present said data more clearly for our viewers and audience. To be honest the presentation was fairly easy to digest and understand just very jam packed with a lot to take in all in at once. The two of them definitely have their own style cues but I enjoyed both. I did like both but I would say I preferred David Robinson's presentation more., I liked it because I liked the EDA Survival ToolKit and liked the fact that a lot of the functions he discussed where something I feel I would use in my career environment a little more but only time will tell.
+
+## In Step 3, I introduced the common usage of gtsummary, which can be useful for school work. Summarize the package's capabilities as explained. How may the {gtsummary} benefit you for your school work or career?
+
+### Response:
+
+Well for starters, the key capabilities would be automatic summary tables, group comparisons, Regression model summaries and Publication-ready formatting. All of these key capabilities help make the gtsummary package what it is whcih allows it to quickly create clean, professional summary tables for data analysis. I feel it would benefit me in both school and work. For school it would make my assignments look a little more professional, could even cut down on manual calculations for statistics, and make it easier to interpret results clearly. For work, it could speed up my workflow, allows me to produce publication-quality tables to share among my colleagues or managers.
+
+## In Step 4, you watched the extended presentation of the {gtsummary} package by Dr. Daniel Dsjoberg, the very creator of the package. How does it differ from gt and gtExtras? Give three things you learned newly that were not explained in the lecture in Step 3.
+
+### Response:
+
+The {gtsummary} package automates statistical summaries and model outputs, while {gt} and {gtExtras} maily focus on formatting and visual styling.
+
+1.  Automatic detection and handling of variable types (including special behavior for dichotomous variables).
+
+2.  Direct support for regression models with correct statistical outputs and formatting.
+
+3.  Strong integation with reproducible workflows (R Markdown, exporting and inline reporting).
+
+## 5. In Step 5, you explored my advanced codebook. Pick one new interesting function from each of the three topics -- strings, factor, and date-time -- that was not introduced in M07. Describe what they are and what they can do for you. While doing so, use actual codes and outputs.
+
+### Response:
+
+1.  Strings: str_sub() it lets you take a portion of the text from a string based on position.
+
+    ![](images/SCREEN%20SHOT%20FOR%20M08%20SUMMARY-2.png)
+
+2.  Factor: fct_reorder() is rearranges the order of categories (factors) so they make more sense\_ especially for plots
+
+    ![](images/SCREEN%20SHOT%20#2%20FOR%20M08%20SUMMARY.png)
+
+    ![](images/SCREEN%20SHOT%20#%203%20for%20m08%20summary.png)
+
+3.  Date and Time: make_date() and make_datetime() are used to create dates and date-times from separate components.
+
+    ![](images/SCFREEN%20SHOT%20#4%20FOR%20M08%20SUMMARY.png)
+
+## 6. I will repeat this again here. Data wrangling is like laying a foundation/basement for a building, while visualization is building a structure above the basement. working in a basement is not a glamorous job at all. No one notices it; people will see what they can see above the ground and judge it, but without the hard work you did in the basement, the building will never stand well. Wrangling with strings and date-time data is particularly hard because we don't get to use it as often as we use numeric data. However, you will get to use factors often, so get used to them soon. What did you like the most about working with the tools you learned in this module? Elaborate on your point.
+
+### Response:
+
+At first, for me wrangling data seemed very tedious but after learning some cool things throughout the module it made it somewhat enjoyable and rewarding when I completed an assignment. I personally enjoyed learning all the new packages from the lectures, yes they were very long and felt time consuming but still enjoyed learning some new things that can help make assignments feel stream-lined. Like previously stating that I enjoyed fct_reorder() from the forcats package becasue it stood out to me because it directly improved final result looks and reinterpreted the data. Also enjoyed using str_sub() or make_datetime() becasue they are vert intuitive and easier to remember. Overall not too much to complain about from this module except for the long lecture videos but in the end they made data wrangling easier for me and easier to analysis for my future audience.
+
+## 7. By this time, I hope you found a way to deal with your challenges well. If you still have a problem and want to consult with me, you can come to see me during my office hours. How much time have you been able to study for this module? Which steps have you been able to study thoroughly?
+
+### Response:
+
+I put in a pretty good amount for time into my assignments. But, I would say there have been numerous times that I would like more clarification on assignments. It feels at times that I have to really have to teach myself step by step and it takes up a lot of my time especially that I work full-time and take care of both my parents.

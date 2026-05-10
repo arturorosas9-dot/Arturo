@@ -1,0 +1,28 @@
+---
+title: 'M07-R Data Types-Principle'
+author: "Jae Jung"
+format:
+  html:
+    toc: true
+    toc-location: right
+---
+
+
+
+```{r}
+library(tidyverse)
+library(nycflights13) # date-time data
+library(gapminder)
+library(Lahman)
+library(lubridate)
+library(glue)
+```
+
+
+# Scalar
+
+
+```{r}
+testScore <- 86
+class(testScore)
+```
