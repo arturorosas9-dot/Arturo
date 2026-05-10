@@ -1,0 +1,624 @@
+---
+title: "M09-2-Application Assignment: Data Import and Export"
+author: "Arturo Rosas"
+format:
+  html:
+    toc: true
+    toc-location: right
+---
+
+
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+# Question 1: Dealing with csv file
+
+## Q1.1: First, import and read the "items_ordered.csv" file such that the data is cleaned up and ready for analysis, and name it "item_csv." Examine the data type and determine if the data type should be changed for a certain variable. If so, change the variable's data type appropriately.
+
+```{r}
+library(readr)
+library(dplyr)
+
+item_csv <- read_csv("data/items_ordered.csv")
+names(item_csv)
+glimpse(item_csv)
+library(readr)
+
+```
+
+```{r}
+library(readr)
+library(dplyr)
+library(lubridate)
+
+# Import correctly (semicolon-separated file)
+item_csv <- read_delim("data/items_ordered.csv", delim = ";")
+
+# Examine structure
+glimpse(item_csv)
+
+# Fix data types
+item_csv <- item_csv %>%
+  mutate(
+    quantity = as.numeric(quantity),
+    price = as.numeric(price),
+    order_date = dmy(order_date)
+  )
+
+# Check cleaned data
+glimpse(item_csv)
+```
+
+
+::: {.callout-tip}
+
+Hint: Note that this CSV file is messy. Open it up in Excel and examine it. Each row has only one column that contains five elements separated by ";". There is a way to parse them nicely during the importation process by adjusting the setting of read_csv() function. Inside the function, you will want to add appropriate arguments. For details, look up help by typing "?read_csv". Alternatively, you may use the menu to generate codes to execute (import > dataset > from Text(readr)). After you read the file into R, you may change data types. For instance, "order_date" variable can be nicely converted to date data type using the lubridate package introduced in M07 and M08.
+
+:::
+
+## Q1.2: Find the most expensive item among all the items ordered by the customers. Your output should be the name of the item.
+
+```{r}
+item_csv %>%
+  slice_max(order_by = price, n = 1)
+```
+
+
+::: {.callout-tip}
+Hints: You may use max() functions to find the highest price. You can also use filter() to find the row that has the highest price. Feel free to use a different approach you may find elsewhere.
+:::
+
+# Question 2: Dealing with excel file
+
+## Q2.1: Import the Excel file and assign "item_excel" to the imported data as its name. 
+
+::: {.callout-tip}
+Hint: It would be easiest to use the menu to generate code and copy and paste the code into the code chunk.
+:::
+
+
+```{r}
+# Install package (run once if not already installed)
+install.packages("readxl", repos = "https://cloud.r-project.org")
+
+# Load package
+library(readxl)
+
+# Import the Excel file
+item_excel <- read_excel("data/items_ordered.xlsx")
+
+# Examine the data
+glimpse(item_excel)
+```
+
+## Q2.2: Using the data imported earlier, create a chart showing the count of the quantity of the items ordered. Create a subdirectory called "images" under the project folder such that it is on the same level as "data" subdirectory. Next, save it as several different graphics files, such as png, pdf, and jpeg. Make sure the files are saved into the "images" subdirectory.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+# Create images folder if it does not already exist
+if (!dir.exists("images")) {
+  dir.create("images")
+}
+
+# Create chart
+item_plot <- item_excel %>%
+  ggplot(aes(x = item, y = quantity)) +
+  geom_col() +
+  labs(
+    title = "Quantity of Items Ordered",
+    x = "Item",
+    y = "Quantity"
+  ) +
+  theme_minimal()
+
+# Show chart
+item_plot
+
+# Save chart in different file formats
+ggsave("images/items_quantity_plot.png", plot = item_plot, width = 8, height = 6)
+ggsave("images/items_quantity_plot.pdf", plot = item_plot, width = 8, height = 6)
+ggsave("images/items_quantity_plot.jpeg", plot = item_plot, width = 8, height = 6)
+```
+
+# Question 3: Importing from the clipboard and cleaning NA's or "--"
+
+## Q3.1: From the website <https://finance.yahoo.com/quote/DIS/profile?p=DIS>, copy the second table named "Key Executives" to your clipboard and assign it "dis_exec" That is, you should create a data frame called "dis_exec". In the end, you should have 5 variables in the data frame. Further, clean up the data by replacing "N/A" with R type missing value ("NA" or "--") and save the data as "dis_exec_clean". When successful, you will see red-colored NA in the affected cells. Further, clean up the column names. That is, convert the title format to lowercase and use "_" between words in the variable name. 
+
+```{r}
+library(readr)
+library(dplyr)
+library(janitor)
+
+dis_exec <- read_csv("data/dis_exec.csv")
+
+dis_exec_clean <- dis_exec %>%
+  clean_names() %>%
+  mutate(across(where(is.character), ~na_if(.x, "N/A"))) %>%
+  mutate(across(where(is.character), ~na_if(.x, "--")))
+
+dis_exec_clean
+```
+
+## Q3.2: Save the "dis_exec_clean" data frame with a new csv file and excel file, separately, in the "data" subdirectory.
+
+
+```{r}
+install.packages("writexl", repos = "https://cloud.r-project.org")
+```
+
+```{r}
+library(readr)
+library(writexl)
+
+# Save as CSV
+write_csv(dis_exec_clean, "data/dis_exec_clean.csv")
+
+# Save as Excel
+write_xlsx(dis_exec_clean, "data/dis_exec_clean.xlsx")
+```
+
+# Question 4: Web scraping
+
+## Q4.1: To begin, the first thing you need to do is to read the target web page URL into R by typing the following in your Rmd file.
+
+## url <- "https://web.archive.org/web/20220201012049/https://www.imdb.com/chart/top/"
+
+## Next, by following the procedure explained in the video, create a vector called "top_movies," which is the top 250 movies shown on the web page. When you do this, try to read and create the "top_movies" dataset in one chain of piping operators. Next, clean up the vector by deleting blank rows. 
+
+```{r}
+library(rvest)
+library(dplyr)
+library(stringr)
+
+url <- "https://web.archive.org/web/20220201012049/https://www.imdb.com/chart/top/"
+
+top_movies <- url %>%
+  read_html() %>%
+  html_elements(".titleColumn a") %>%
+  html_text(trim = TRUE) %>%
+  .[. != ""]
+
+top_movies
+```
+
+
+::: {.callout-tip}
+
+*Hint*: This task is a replica of the example shown in the principles lecture, although the content is different. However, instead of creating multiple file names, we are only interested in the "top_movies" dataset. You need to use functions such as read_html(), html_elements(), and html_text() in order to extract the top movies. The stringr package's functions will be useful for working with strings.
+
+:::
+
+## Q4.2: Now, scrape the year and assign it "year" as a variable name by applying the same procedure used to extract the "top_movies" dataset above. Next, clean the data. 
+
+
+```{r}
+library(rvest)
+library(stringr)
+
+url <- "https://web.archive.org/web/20220201012049/https://www.imdb.com/chart/top/"
+
+year <- url %>%
+  read_html() %>%
+  html_elements(".secondaryInfo") %>%
+  html_text(trim = TRUE) %>%
+  str_remove_all("[()]") %>%   # remove parentheses
+  str_trim()                  # clean spaces
+
+year
+```
+
+
+::: {.callout-tip}
+
+*Hints*: There may be more than a year in the scraped data, making it necessary to clean up extra information. One way to do so is to use filter and str_detect() to select only the rows that match the pattern of "year."
+
+:::
+
+## Q4.3: Still on this same URL, now scrape the rating and name it "rating" as a variable name. If there is any other extra information, clean the data.
+
+```{r}
+library(rvest)
+library(stringr)
+
+url <- "https://web.archive.org/web/20220201012049/https://www.imdb.com/chart/top/"
+
+rating <- url %>%
+  read_html() %>%
+  html_elements(".imdbRating strong") %>%
+  html_text(trim = TRUE) %>%
+  as.numeric()
+
+rating
+```
+
+# Question 5: Creating a data frame from web-scraped data
+
+## Create a data frame called "top250_movies" by combining the three vectors you created earlier -- "top_movies," "year," and "rating." Then save the data after sorting it in descending order of rating. Confirm that your work was done correctly by printing the top and bottom 6 rows.
+
+```{r}
+library(dplyr)
+
+# Combine into data frame
+top250_movies <- data.frame(
+  top_movies = top_movies,
+  year = year,
+  rating = rating
+)
+
+# Convert types (just in case)
+top250_movies <- top250_movies %>%
+  mutate(
+    year = as.numeric(year),
+    rating = as.numeric(rating)
+  ) %>%
+  arrange(desc(rating))   # sort by highest rating
+
+# View top and bottom 6 rows
+head(top250_movies, 6)
+tail(top250_movies, 6)
+```
+
+::: {.callout-tip}
+
+*Hint*: To combine the three vectors, the number of elements in each vector should be the same. Check it first. One way to do it is by passing the vectors in length() function -- e.g., length(top_movies). Of course, you can visually inspect the vectors by printing them on the screen using the print() function or simply typing the vector name and executing it. If you converted the vector to a data frame, length() won't work; use nrow() instead.  
+
+:::
+
+# Question 6: Replacing values with NA
+
+Use the following code to generate a "data" dataset and use it for Q6. Here our interest is to replace some values and characters with NA. 
+
+
+::: {.callout-tip}
+
+*Hint*: Use "naniar" package that was introduced earlier in the expanded codebook. It has several functions that are useful for this operation:  replace_with_na(), replace_with_na_all(), replace_with_na_if(), and replace_with_na_at().
+
+:::
+
+## Data
+```{r}
+data <- tibble::tribble(
+  ~name,           ~x,  ~y,              ~z,  
+  "N/A",           1,   "N/A",           -100, 
+  "N A",           3,   "NOt available", -99,
+  "N / A",         NA,  "29",              -98,
+  "Not Available", -99, "25",              -101,
+  "John Smith",    -98, "28",              -1)
+
+data
+
+# library(naniar)
+```
+
+## Q6.1: Replace all elements with "N/A" with the proper missing value in R (e.g., "NA") across all character variables.
+
+```{r}
+library(dplyr)
+
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~na_if(.x, "N/A")))
+```
+
+## Q6.2: Replace all elements with "N/A", "N A", or "N / A" with a missing value in R (e.g., "NA") across all character variables. Use the four different functions to do the task. 
+
+```{r}
+library(dplyr)
+
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~case_when(
+    .x %in% c("N/A", "N A", "N / A") ~ NA_character_,
+    TRUE ~ .x
+  )))
+
+dis_exec_clean
+```
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~case_when(
+    .x %in% c("N/A", "N A", "N / A") ~ NA_character_,
+    TRUE ~ .x
+  )))
+
+# 👉 Add this line to display output
+dis_exec_clean
+```
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~ifelse(
+    .x %in% c("N/A", "N A", "N / A"),
+    NA,
+    .x
+  )))
+
+# 👉 This line makes it render
+dis_exec_clean
+```
+
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~replace(
+    .x,
+    .x %in% c("N/A", "N A", "N / A"),
+    NA
+  )))
+
+# 👉 Add this line so it shows
+dis_exec_clean
+```
+
+## Q6.3: Replace all elements with "-99" and "-98"  with a missing value in R (e.g., "NA") across all character variables. use all four functions to do this task.
+
+```{r}
+library(dplyr)
+
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~case_when(
+    .x %in% c("-99", "-98") ~ NA_character_,
+    TRUE ~ .x
+  )))
+
+dis_exec_clean
+```
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~case_when(
+    .x %in% c("-99", "-98") ~ NA_character_,
+    TRUE ~ .x
+  )))
+
+# 👉 ADD THIS LINE
+dis_exec_clean
+```
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~ifelse(
+    .x %in% c("-99", "-98"),
+    NA,
+    .x
+  )))
+
+# 👉 ADD ONE OF THESE:
+dis_exec_clean
+```
+
+```{r}
+dis_exec_clean <- dis_exec_clean %>%
+  mutate(across(where(is.character), ~ifelse(
+    .x %in% c("-99", "-98"),
+    NA,
+    .x
+  )))
+
+dis_exec_clean
+```
+
+## Q6.4: Out of the four functions you tried, Which one is your favorite function and why?
+
+My favorite function is na_if() because it’s the easiest to use and very straightforward. It does exactly what I need without extra complexity. The other functions work too, but they require more code and are harder to read. na_if() is cleaner and more efficient for this type of task.
+
+# Question 7: Impact of GDP on student/teacher ratio
+
+## Q7.1: For student/teacher ratio, use the following URL to read the data: https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-07/student_teacher_ratio.csv Links to an external site.. Examine the data. Explore the data to answer the following: (1) variables with missing values, (2) the years covered in the data and their distribution, (3) all the indicators and their distribution. Next, filter the data to include rows with 2016 "Secondary Education" and without missing values for "student_ratio." Save the data as "s_t_ratio_2nd_edu_2016". This new dataset should have 151 rows and 8 columns. 
+
+```{r}
+library(readr)
+library(dplyr)
+
+# Step 1: Import data
+url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-07/student_teacher_ratio.csv"
+
+s_t_ratio <- read_csv(url)
+
+# Examine structure
+glimpse(s_t_ratio)
+
+# -------------------------------
+# (1) Variables with missing values
+colSums(is.na(s_t_ratio))
+
+# -------------------------------
+# (2) Years covered + distribution
+range(s_t_ratio$year, na.rm = TRUE)
+table(s_t_ratio$year)
+
+# -------------------------------
+# (3) Indicators + distribution
+table(s_t_ratio$indicator)
+
+# -------------------------------
+# Step 2: Filter data
+s_t_ratio_2nd_edu_2016 <- s_t_ratio %>%
+  filter(
+    year == 2016,
+    indicator == "Secondary Education",
+    !is.na(student_ratio)
+  )
+
+# Check dimensions
+dim(s_t_ratio_2nd_edu_2016)
+
+# View result
+s_t_ratio_2nd_edu_2016
+```
+
+## Q7.2: Next, Using the WDI package, search for gdp per capita and population and create a dataset called "indicators_2016" that would include 2016 gdp per capita, population, and the region as well as the three-digit country code ("iso3c"). 
+
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+install.packages("WDI", dependencies = TRUE)
+library(WDI)
+library(dplyr)
+```
+
+```{r}
+WDIsearch("gdp per capita")
+WDIsearch("population")
+```
+
+```{r}
+indicators_2016 <- WDI(
+  country = "all",
+  indicator = c(
+    gdp_per_capita = "NY.GDP.PCAP.CD",
+    population = "SP.POP.TOTL"
+  ),
+  start = 2016,
+  end = 2016,
+  extra = TRUE
+) %>%
+  select(iso3c, country, region, gdp_per_capita, population) %>%
+  filter(region != "Aggregates")
+```
+
+## Q7.4: Draw a chart that shows the impact of GDP on the student/teacher ratio and do all the things to make the chart presentable. This includes, but is not limited to, mapping population to the size of data points and region to the color of the data points, adding country names next to the data points as a label, transformation of data, addition of linear regression line as well as all the usual labels for x, y, title, subtitle, etc. 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+library(scales)
+
+# Join datasets
+combined_data <- s_t_ratio_2nd_edu_2016 %>%
+  left_join(indicators_2016, by = c("country_code" = "iso3c"))
+
+# Check column names
+names(combined_data)
+
+# Create a clean country label column
+# Change country.y below to country.x if needed
+plot_data <- combined_data %>%
+  mutate(country_label = country.y) %>%
+  filter(
+    !is.na(gdp_per_capita),
+    !is.na(population),
+    !is.na(student_ratio),
+    !is.na(country_label),
+    gdp_per_capita > 0
+  )
+
+# Plot
+ggplot(plot_data, aes(x = gdp_per_capita, y = student_ratio)) +
+  geom_point(aes(size = population, color = region), alpha = 0.7) +
+  geom_text_repel(aes(label = country_label, color = region), size = 3, max.overlaps = 20) +
+  geom_smooth(method = "lm", se = TRUE, color = "black", linewidth = 1) +
+  scale_x_log10(labels = dollar_format()) +
+  scale_size_continuous(range = c(2, 10), labels = comma) +
+  labs(
+    title = "Impact of GDP per Capita on Student-Teacher Ratio in 2016",
+    subtitle = "Secondary education student-teacher ratio across countries",
+    x = "GDP per Capita (log scale, current US$)",
+    y = "Student-Teacher Ratio",
+    color = "Region",
+    size = "Population",
+    caption = "Source: World Bank WDI and student-teacher ratio data"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 11),
+    legend.position = "right"
+  )
+```
+
+## Q7.5: This time, create a separate chart by region. There should be six charts. Also, do all the appropriate coding to improve the aesthetics of the chart.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+library(scales)
+
+# Join datasets
+combined_data <- s_t_ratio_2nd_edu_2016 %>%
+  left_join(indicators_2016, by = c("country_code" = "iso3c"))
+
+# Create clean plotting data
+# If country.y does not exist, replace it with the correct country-name column
+plot_data <- combined_data %>%
+  mutate(country_label = country.y) %>%
+  filter(
+    !is.na(gdp_per_capita),
+    !is.na(population),
+    !is.na(student_ratio),
+    !is.na(region),
+    !is.na(country_label),
+    gdp_per_capita > 0
+  )
+
+# Faceted chart by region
+ggplot(plot_data, aes(x = gdp_per_capita, y = student_ratio)) +
+  geom_point(aes(size = population, color = region), alpha = 0.7) +
+  geom_text_repel(
+    aes(label = country_label),
+    size = 2.5,
+    max.overlaps = 15,
+    show.legend = FALSE
+  ) +
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "black",
+    linewidth = 0.8
+  ) +
+  scale_x_log10(labels = dollar_format()) +
+  scale_size_continuous(range = c(2, 8), labels = comma) +
+  facet_wrap(~ region) +
+  labs(
+    title = "GDP per Capita and Student-Teacher Ratio by Region (2016)",
+    subtitle = "Secondary education student-teacher ratio across countries",
+    x = "GDP per Capita (log scale, current US$)",
+    y = "Student-Teacher Ratio",
+    size = "Population",
+    color = "Region",
+    caption = "Source: World Bank WDI and student-teacher ratio data"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 11),
+    strip.text = element_text(face = "bold", size = 10),
+    legend.position = "bottom"
+  )
+```
+
+# Question 8: Labelled data
+
+## Q8.1: We will use the "demo.sav" dataset available in the "data" subdirectory.  Then read the data into R and assign it to a file named "demo." View the data directory that shows variables, labels, values, and their labels.
+
+```{r}
+library(haven)
+library(dplyr)
+
+# Read the dataset
+demo <- read_sav("data/demo.sav")
+
+# View first few rows
+head(demo)
+
+# Structure of data (variables + types)
+str(demo)
+
+# Cleaner overview
+glimpse(demo)
+
+# Variable labels
+sapply(demo, function(x) attr(x, "label"))
+
+# Value labels (for categorical variables)
+lapply(demo, function(x) attr(x, "labels"))
+```
+
+
+

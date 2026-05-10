@@ -1,0 +1,40 @@
+---
+title: "Visualizations & Data Work"
+description: "A collection of my R programming and data visualization projects."
+---
+
+## Data Science and R Programming Projects
+
+Below is a collection of my coursework and projects focused on data visualization, data types, and data import/export in R.
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; margin-bottom: 4rem;"}
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff;"}
+### M03: Data Visualization Demo
+A demonstration of plotting techniques and foundational data visualization using R.
+<br><br>
+[View Project (HTML)](M03-Demo.qmd){.btn .btn-primary}
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff;"}
+### M07: R Data Types
+An exploration of foundational R data types and structures.
+<br><br>
+[View Application (HTML)](M07-DataTypes.qmd){.btn .btn-primary}
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff;"}
+### M08: Advanced Data Types Reflection
+A reflective essay on working with advanced data structures in R.
+<br><br>
+[View Reflection (HTML)](M08-Reflection.qmd){.btn .btn-primary}
+:::
+
+::: {style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff;"}
+### M09: Data Import and Export
+An application assignment demonstrating how to effectively import, clean, and export data in R.
+<br><br>
+[View Application (HTML)](M09-ImportExport.qmd){.btn .btn-primary}
+:::
+
+:::

@@ -1,0 +1,15 @@
+---
+title: ""
+author: "Arturo Rosas"
+format:
+  html:
+    toc: true
+    toc-location: right
+---
+
+
+
+
+```{r}
+
+```

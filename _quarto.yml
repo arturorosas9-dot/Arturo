@@ -31,6 +31,10 @@ website:
         href: google-analytics.qmd
       - text: "Coursework"
         href: coursework.qmd
+      - text: "Certifications"
+        href: certifications.qmd
+      - text: "Visualizations"
+        href: visualizations.qmd
     right:
       - icon: envelope
         href: mailto:arturorosas9@gmail.com
@@ -54,4 +58,5 @@ format:
       margin-width: 0px
 
 execute:
+  error: true
   freeze: auto
