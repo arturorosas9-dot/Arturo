@@ -6,6 +6,7 @@ project:
     - "listings/*.qmd"
   resources:
     - "resume/Resume.Rmd"
+    - "rendered/**"
 
 website:
   title: "Arturo Rosas"
@@ -35,6 +36,8 @@ website:
         href: certifications.qmd
       - text: "Visualizations"
         href: visualizations.qmd
+      - text: "Presentations"
+        href: presentations.qmd
     right:
       - icon: envelope
         href: mailto:arturorosas9@gmail.com
@@ -52,6 +55,7 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
+    include-in-header: google-tag-manager.html
     grid:
       sidebar-width: 0px
       body-width: 760px

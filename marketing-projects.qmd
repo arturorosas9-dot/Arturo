@@ -9,36 +9,65 @@ This section will hold Arturo's applied marketing projects, including class assi
 
 The goal is to show how Arturo thinks through marketing problems: identifying the audience, understanding the customer need, defining a message, recommending channels, and connecting the work to measurable outcomes.
 
-## Project Slots
+## Featured Projects
+
+This section highlights Arturo's diverse portfolio, showcasing his professional marketing photography and technical engineering builds.
 
 ::: {.content-grid}
 ::: {.content-card}
-### Customer Profile or Persona
+### Professional Photography
 
-Add a project that defines a target customer, their goals, pain points, buying motivations, and decision process.
+```{=html}
+<div id="photographyCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/projects/Project-Photography.jpeg" class="d-block w-100" alt="Automotive Photography 1">
+    </div>
+    <div class="carousel-item">
+      <img src="images/projects/Project-Photography.19.jpeg" class="d-block w-100" alt="Automotive Photography 2">
+    </div>
+    <div class="carousel-item">
+      <img src="images/projects/Project-Photography.21.jpeg" class="d-block w-100" alt="Automotive Photography 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#photographyCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#photographyCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+```
+
+Arturo specializes in high-quality automotive photography, capturing the essence of design and performance. His work focuses on professional lighting, composition, and post-processing to create compelling visual narratives for marketing campaigns.
 :::
 
 ::: {.content-card}
-### Campaign Concept
+### Technical Engineering Builds
 
-Add a campaign idea with objective, audience, message, channels, and success metrics.
-:::
+```{=html}
+<div id="buildsCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/projects/Project-Build.jpeg" class="d-block w-100" alt="Engineering Build 1">
+    </div>
+    <div class="carousel-item">
+      <img src="images/projects/Project-Build.20.jpeg" class="d-block w-100" alt="Engineering Build 2">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#buildsCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#buildsCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+```
 
-::: {.content-card}
-### Product or Service Positioning
-
-Add a positioning analysis that explains how a product or service should be presented to a specific audience.
-:::
-
-::: {.content-card}
-### Competitive Analysis
-
-Add research comparing brands, products, competitors, pricing, customer experience, or communication strategy.
-:::
-
-::: {.content-card}
-### Retail Sales & Marketing Reflection
-
-Add a reflection connecting Best Buy experience to marketing concepts such as customer journey, value proposition, product education, and relationship building.
+Beyond photography, Arturo is deeply involved in technical engineering projects. This section showcases his work on high-performance engine builds and mechanical assemblies, demonstrating his attention to detail, technical proficiency, and passion for engineering excellence.
 :::
 :::

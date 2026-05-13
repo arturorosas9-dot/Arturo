@@ -1,0 +1,22 @@
+---
+title: "Presentations"
+subtitle: "Interactive Slide Decks & Revealjs Presentations"
+---
+
+These slide decks were developed using Quarto and Revealjs, allowing for dynamic, code-driven storytelling and interactive data visualizations.
+
+```{=html}
+<div class="features-grid" style="margin-top:2rem;">
+
+  <div class="feature-card">
+    <div class="feature-icon-box">
+      <i class="bi bi-layers"></i>
+    </div>
+    <h3>Advanced Data Types</h3>
+    <p><strong>Module 08 Reflection</strong><br>
+    An exploration of complex data structures in R, including lists, data frames, and factor management.</p>
+    <a href="rendered/m08-reflection.html" class="btn-hero-primary" target="_blank">View Slides</a>
+  </div>
+
+</div>
+```
